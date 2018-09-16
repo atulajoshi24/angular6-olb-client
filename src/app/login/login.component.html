@@ -1,0 +1,48 @@
+   <div class="card">
+     <div class="card-header bg-primary">
+        Login 
+     </div>
+     
+      <div class="card-body">
+          <form novalidate [formGroup]="loginForm" (ngSubmit)="login()">
+
+                <div class="form-group">
+                  <label for="username">User Name :</label>
+                  <input type="text" class="form-control" id="username" formControlName="username">
+                  <span *ngIf="(loginForm.get('username').dirty || loginForm.get('username').touched)
+                                && loginForm.get('username').errors">
+                                 
+                            <span *ngIf="loginForm.get('username').errors.required">
+                                User Name Is Required  
+                            </span>
+                  </span>
+                </div>
+                <div class="form-group">
+                  <label for="pwd">password:</label>
+                  <input type="password" class="form-control" id="pwd" formControlName="password">
+                  <span *ngIf="(loginForm.get('password').dirty || loginForm.get('password').touched)
+                                && loginForm.get('password').errors">
+                                
+                            <span *ngIf="loginForm.get('password').errors.required">
+                                password Is Required  
+                            </span>
+                  </span>
+                </div>
+
+          <button type="submit" class="btn btn-info" [disabled]="!loginForm.valid">
+              Submit
+          </button>
+
+          Form Valid : {{loginForm.valid}}
+
+          Form Dirty  : {{loginForm.dirty}}
+
+          Form Touched : {{loginForm.touched}}
+
+          </form>
+      </div>
+     <div class="card-footer">
+     </div>
+   </div>
+
+
