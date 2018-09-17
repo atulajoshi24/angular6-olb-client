@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from '../products/product';
+import { ProductSubscriptionService } from './product-subscription.service';
 
 @Component({
   selector: 'app-confirm-subscription',
@@ -8,9 +10,13 @@ import { Router } from '@angular/router';
 })
 export class ConfirmSubscriptionComponent implements OnInit {
 
-  constructor(private _route:Router) { }
-
+  private product : Product = null;
+  constructor(private _route:Router,private _productSubscriptionService : ProductSubscriptionService) { }
   ngOnInit() {
+
+    this._productSubscriptionService.getSubscriptionInfo().subscribe(
+      (data) => console.log(' Returned Data .. '+JSON.stringify(data))
+    );
   }
 
   backToHome() : void {

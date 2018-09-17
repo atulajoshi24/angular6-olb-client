@@ -2,6 +2,7 @@ PROD SUBSCRIPTION WORKS
 <div class="card">
     <div class="card-header">
       Product Subscription 
+      {{errorMessage}}
     </div>
     <div class="card-body">
         <form novalidate [formGroup]="productSubscriptionForm" (ngSubmit)="subscribe()">
