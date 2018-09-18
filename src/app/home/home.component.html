@@ -1,6 +1,11 @@
-<p>
-  home works!
-  Welcome User , You Auth Status 
-  {{authenticated}}
 
-</p>
+  <div *ngIf="authenticated">
+      You are Already Logged In 
+      Show Existing Products Here 
+  </div>  
+  <div *ngIf="!authenticated">
+      You are  Not Logged In 
+      Please Login To Continue        
+  </div> 
+
+

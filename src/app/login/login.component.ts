@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     //this._router.navigate(['subscribe']);
     this._loginService.setAuthenticatedFlag(false);
     this._router.navigate(['/login']);
-    this.errors = "";
+    this.errors = "Login Error , Please Login Again ";
 
   }
      

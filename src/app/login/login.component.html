@@ -4,6 +4,11 @@
      </div>
      
       <div class="card-body">
+  
+          <div class="">
+                {{errors}}
+          </div>
+
           <form novalidate [formGroup]="loginForm" (ngSubmit)="login()">
 
                 <div class="form-group">

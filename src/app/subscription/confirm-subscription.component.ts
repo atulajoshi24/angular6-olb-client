@@ -12,10 +12,12 @@ export class ConfirmSubscriptionComponent implements OnInit {
 
   private product : Product = null;
   constructor(private _route:Router,private _productSubscriptionService : ProductSubscriptionService) { }
+ 
   ngOnInit() {
 
     this._productSubscriptionService.getSubscriptionInfo().subscribe(
-      (data) => console.log(' Returned Data .. '+JSON.stringify(data))
+      (data : Product) => this.product = data,
+      () => console.log('ERROR in subscribing ')
     );
   }
 
